@@ -36,7 +36,7 @@ function EmojiDisplay() {
   return (
     <div>
       <h2>Imoji Data Generator</h2>
-      <ul style="list-style-type: none">
+      <ul>
         {emojis.map(emoji => (
           <li>
             {emoji.slug},<br/>
