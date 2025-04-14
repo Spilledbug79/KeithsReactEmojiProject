@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'
+import SearchBox from './components/SearchBox'
 
 function EmojiDisplay() {
   const [emojis, setEmojis] = useState([]);
@@ -23,7 +24,7 @@ function EmojiDisplay() {
       } catch (error) {
         setError(error);
       } finally {
-         setLoading(false);
+        setLoading(false);
       }
     };
 
@@ -35,29 +36,31 @@ function EmojiDisplay() {
     return <div>Loading...</div>;
   }
 
-    if (error) {
+  if (error) {
     return <div>Error: {error.message}</div>;
   }
 
 
   return (
+    <>
+    <SearchBox/>
     <div>
-     <h2>Emoji Data Generator</h2>    
-      <button onClick={handleClick}>Show All Emoji Data</button>
+      <h2>Emoji Data Generator &#128512; </h2>
+      <button onClick={handleClick}>Show Emoji Data</button>
       {isVisible && <ul className='emojiInfo'>
         {emojis.map(emoji => (
           <li>
-            {emoji.slug},<br/>
-            {emoji.character},<br/>
+            {emoji.slug},<br />
             {emoji.unicodeName},<br/>
-            {emoji.codePoint},<br/>
-            {emoji.group},<br/>
+            <p className='code'>CodePoint:{emoji.codePoint}</p>,<br />
+            {emoji.group},<br />
             {emoji.subGroup}
-         </li>
+          </li>
         ))}
       </ul>}
-     
+
     </div>
+    </>
   );
 }
 

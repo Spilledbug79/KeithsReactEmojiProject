@@ -1,3 +1,30 @@
 .emojiInfo{
  list-style-type: none;
 }
+
+.convertedEmoji{
+ display: none;
+}
+
+ 
+.face{
+ height: 5px;
+ font-size: 40px;
+}
+
+body{
+ text-align: center;
+ position: fixed;
+}
+
+input{
+ height: 32px;
+}
+
+.code{
+ display: inline;
+ position: relative;
+   
+}
+
+ 

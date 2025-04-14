@@ -1,61 +1,44 @@
-import React, { useState, useEffect } from 'react';
-
-function EmojiSearch() {
-  const [emojis, setEmojis] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchEmojis = async () => {
-      try {
-        const response = await fetch('https://emojihub.yurace.pro/api/all');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setEmojis(data);
-      } catch (e) {
-        setError(e);
-      } finally {
-        setLoading(false);
+import React, { useState } from 'react';
+function EmojiFinder() {
+  const [emojiInput, setEmojiInput] = useState('');
+  const [emojiFace, setEmojiFace] = useState('');
+  const [error, setError] = useState('');
+  const handleSearch = async () => {
+    if (!emojiInput.trim()) return;
+    try {
+      const response = await fetch('https://emoji-api.com/emojis?access_key=0037c9794745ff1ccdf7425677fa8925df9c51d6');
+      const data = await response.json();
+      const match = data.find(e => e.codePoint === emojiInput.trim());
+      if (match) {
+        setEmojiFace(match.character);
+        setError('');
+      } else {
+        setEmojiFace('');
+        setError('No emoji match found.');
       }
-    };
-
-    fetchEmojis();
-  }, []);
-
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
+    } catch (err) {
+      console.error(err);
+      setError('Failed to fetch emoji data.');
+    }
   };
-
-  const filteredEmojis = emojis.filter((emoji) =>
-    emoji.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  if (loading) {
-    return <div>Loading emojis...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
   return (
-    <div>
-      <input
+    <div style={{ padding: '15px', fontFamily: 'sans-serif' }}>
+      <h2>Emoji Face Finder</h2>
+      <input  
         type="text"
-        placeholder="Search for emojis..."
-        value={searchTerm}
-        onChange={handleSearch}
+        value={emojiInput}
+        onChange={(e) => setEmojiInput(e.target.value)}
+        placeholder="Type or Paste CodePoint"
+        
       />
-      <div>
-        {filteredEmojis.map((emoji) => (
-          <span key={emoji.id}>{emoji.htmlCode[0]}</span>
-        ))}
+      <button onClick={handleSearch} style={{ marginLeft: '50px' }}>
+        Find Face
+      </button>
+      <div className="results"> 
+      {emojiFace && <p className='face'> Emoji Face: {emojiFace}</p>}
       </div>
+      {error && <p style={{ color: 'red'}}>{error}</p>}
     </div>
   );
 }
-
-export default EmojiSearch;
+export default EmojiFinder;
