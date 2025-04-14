@@ -43,23 +43,24 @@ function EmojiDisplay() {
 
   return (
     <>
+    <div className="container">
     <SearchBox/>
-    <div>
-      <h2>Emoji Data Generator &#128512; </h2>
+    <h2>Emoji Data Generator &#128512; </h2>
       <button onClick={handleClick}>Show Emoji Data</button>
       {isVisible && <ul className='emojiInfo'>
         {emojis.map(emoji => (
           <li>
-            {emoji.slug},<br />
-            {emoji.unicodeName},<br/>
-            <p className='code'>CodePoint:{emoji.codePoint}</p>,<br />
-            {emoji.group},<br />
-            {emoji.subGroup}
+            
+            <p className='code'><strong>CodePoint:</strong><em>{emoji.codePoint}</em></p>
+            group: {emoji.group},<br/>
+            subgroup: {emoji.subGroup},<br/>
+            name: {emoji.slug},<br/>
+            Unicode: {emoji.unicodeName},
           </li>
         ))}
       </ul>}
-
-    </div>
+      </div>
+ 
     </>
   );
 }

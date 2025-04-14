@@ -2,29 +2,38 @@
  list-style-type: none;
 }
 
-.convertedEmoji{
- display: none;
-}
-
  
+
 .face{
  height: 5px;
  font-size: 40px;
 }
 
-body{
- text-align: center;
- position: fixed;
+.container{
+display: flex;
+flex-direction: column;
+text-align: center;
+align-items: center;
+position: absolute;
+top: 5px;
+left: 300px;
+right: 300px;
 }
 
 input{
- height: 32px;
+ height: 36px;
+ width: 55%;
 }
 
 .code{
- display: inline;
+  
  position: relative;
-   
+ display: flex;
+ flex-direction: column;
 }
+
+
+
+ 
 
  
