@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import './App.css'
 
 function EmojiDisplay() {
   const [emojis, setEmojis] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleClick = () => {
+    setIsVisible(!isVisible); // Toggle visibility on each click
+  };
 
   useEffect(() => {
     const fetchEmojis = async () => {
@@ -21,6 +27,7 @@ function EmojiDisplay() {
       }
     };
 
+
     fetchEmojis();
   }, []);
 
@@ -35,8 +42,9 @@ function EmojiDisplay() {
 
   return (
     <div>
-      <h2>Imoji Data Generator</h2>
-      <ul>
+     <h2>Emoji Data Generator</h2>    
+      <button onClick={handleClick}>Show All Emoji Data</button>
+      {isVisible && <ul className='emojiInfo'>
         {emojis.map(emoji => (
           <li>
             {emoji.slug},<br/>
@@ -45,11 +53,10 @@ function EmojiDisplay() {
             {emoji.codePoint},<br/>
             {emoji.group},<br/>
             {emoji.subGroup}
-             {/* Or display an image if your API provides an image URL: */}
-             {/* <img src={emoji.image} alt={emoji.name} /> */}
-          </li>
+         </li>
         ))}
-      </ul>
+      </ul>}
+     
     </div>
   );
 }
