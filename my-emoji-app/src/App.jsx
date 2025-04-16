@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'
-import SearchBox from './components/SearchBox'
+import EmojiSearch from './components/EmojiSearch'
 
 function EmojiDisplay() {
   const [emojis, setEmojis] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [value, setValue] = useState('')
 
   const handleClick = () => {
-    setIsVisible(!isVisible); // Toggle visibility on each click
+    setIsVisible(!isVisible);
   };
 
   useEffect(() => {
@@ -43,24 +44,27 @@ function EmojiDisplay() {
 
   return (
     <>
-    <div className="container">
-    <SearchBox/>
-    <h2>Emoji Data Generator &#128512; </h2>
-      <button onClick={handleClick}>Show Emoji Data</button>
-      {isVisible && <ul className='emojiInfo'>
-        {emojis.map(emoji => (
-          <li>
-            
-            <p className='code'><strong>CodePoint:</strong><em>{emoji.codePoint}</em></p>
-            group: {emoji.group},<br/>
-            subgroup: {emoji.subGroup},<br/>
-            name: {emoji.slug},<br/>
-            Unicode: {emoji.unicodeName},
-          </li>
-        ))}
-      </ul>}
+      <div className="container">
+        <EmojiSearch />
+        <h2>Emoji Data Generator &#128512; </h2>
+        <button onClick={handleClick}>Show All Emojis</button>
+
+        {isVisible && <ul className='emojiInfo'>
+          {emojis.map(emoji => (
+            <li>
+              <p className='code'><strong>CodePoint:</strong>
+
+                <em>{emoji.codePoint}</em></p>
+
+              group: {emoji.group},<br />
+              subgroup: {emoji.subGroup},<br />
+              name: {emoji.slug},<br />
+              Unicode: {emoji.unicodeName},
+            </li>
+          ))}
+        </ul>}
       </div>
- 
+
     </>
   );
 }

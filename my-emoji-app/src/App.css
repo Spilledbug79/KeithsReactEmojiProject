@@ -32,7 +32,11 @@ input{
  flex-direction: column;
 }
 
+ .filtered{
+  display: none;
+ }
 
+ 
 
  
 
