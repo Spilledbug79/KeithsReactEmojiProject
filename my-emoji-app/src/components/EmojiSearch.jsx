@@ -1,21 +1,17 @@
 import React, { useEffect, useState } from 'react';
- 
+
 
 function EmojiSearch() {
   const [emojiList, setEmojiList] = useState([]);
   const [searchEmoji, setSearchEmoji] = useState('');
   const [error, setError] = useState(null);
-   
-  const [inputValue, setInputValue] = useState('')
-   
- const handleChange = (e) => {
-  const newValue = e.target.value;
-  setInputValue(newValue);
- }
-  
+
+  function handleChange(e) {
+    setSearchEmoji(e.target.value)
+  }
 
   const EmojiFetch = async () => {
-  
+
     try {
       const response = await fetch('https://emoji-api.com/emojis?access_key=0037c9794745ff1ccdf7425677fa8925df9c51d6');
 
@@ -26,12 +22,12 @@ function EmojiSearch() {
       const data = await response.json()
 
 
-    
-     return setEmojiList(data)
-     
+
+      return setEmojiList(data)
+
     } catch (err) {
       setError(err.message);
-      
+
     }
   };
 
@@ -39,37 +35,35 @@ function EmojiSearch() {
     EmojiFetch();
   }, [])
 
-   
+
   if (error) return <p>Error: {error}</p>;
-   
+
 
   const filteredEmojis = emojiList.filter(emoji => emoji.slug.toLowerCase().includes(searchEmoji.toLowerCase()) ||
     emoji.unicodeName.toLowerCase().includes(searchEmoji.toLowerCase())
   )
-   
- if(value === ''){
-  results style={display: 'none'}
- }
- 
 
- 
+
   return (
     <div>
       <input
         className='input'
         type='text'
-        placeholder="Search for an Emoji"
+        placeholder="Type an Emoji name"
         value={searchEmoji}
-        onChange={(e) => setSearchEmoji(e.target.value)}
-        
+        onChange={handleChange}
+
       />
-      <div>
-        {filteredEmojis.slice(0, 10).map((emoji, index) => (<span className='results' key={index} title={emoji.unicodeName}> {emoji.character}</span>
+      <div className='filtered' style={{ display: searchEmoji === '' ? 'none' : 'block' }}>
+
+        {filteredEmojis.slice(0, 10).map((emoji, index) =>
+        (<span key={index} title={emoji.unicodeName}>
+          {emoji.character} 
+        </span>
         ))}
-        
       </div>
     </div>
-  )
-  
+  );
+
 }
 export default EmojiSearch;

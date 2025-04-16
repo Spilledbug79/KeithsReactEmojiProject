@@ -20,10 +20,7 @@ left: 300px;
 right: 300px;
 }
 
-input{
- height: 36px;
- width: 55%;
-}
+ 
 
 .code{
   
@@ -32,9 +29,11 @@ input{
  flex-direction: column;
 }
 
- .filtered{
-  display: none;
- }
+
+
+ 
+
+ 
 
  
 
