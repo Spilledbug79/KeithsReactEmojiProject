@@ -4,10 +4,13 @@ function EmojiFinder() {
   const [emojiList, setEmojiList] = useState([]);
   const [searchEmoji, setSearchEmoji] = useState('');
   const [error, setError] = useState(null);
+  const [showEmojis, setShowEmojis] = useState(false);
+  const [displayedValue, setDisplayedValue] = useState('');
 
-  function handleChange(e) {
-    setSearchEmoji(e.target.value)
-  }
+  
+
+
+
 
   const EmojiFetch = async () => {
 
@@ -35,12 +38,11 @@ function EmojiFinder() {
 
   if (error) return <p>Error: {error}</p>;
 
+ 
+const filteredGroupEmoji = emojiList.filter(emoji => emoji.group.toLowerCase().replace(/\s+/g, "-").trim('').includes(searchEmoji.toLowerCase().replace(/\s+/g, "-").trim('')) ||
+    emoji.subGroup.toLowerCase().replace(/\s+/g, "-").trim('').includes(searchEmoji.toLowerCase().replace(/\s+/g, "-").trim('')))
 
-
-
-  const filteredGroupEmoji = emojiList.filter(emoji => emoji.group.toLowerCase().replace(/\s+/g, "-").trim('').includes(searchEmoji.toLowerCase().replace(/\s+/g, "-").trim('')) ||
-    emoji.subGroup.toLowerCase().replace(/\s+/g, "-").trim('').includes(searchEmoji.toLowerCase().replace(/\s+/g, "-").trim(''))
-  )
+ 
 
 
   return (
@@ -50,15 +52,16 @@ function EmojiFinder() {
         type='text'
         placeholder="Type an Emoji Group or Subgroup..."
         value={searchEmoji}
-        onChange={handleChange}
-        /><button onClick={EmojiFetch}>Group Search</button>
-       
-          
-        {filteredGroupEmoji.slice(0, 10).map((emoji, index) =>
-        (<span key={index} title={emoji.unicode}>
+        onChange={(e) => setSearchEmoji(e.target.value)}
+      /><button onClick={searchEmoji}>Group Search</button> 
+      <div className='name' style={{ display: searchEmoji === '' ? 'none' : 'block' }}>
+
+        {filteredGroupEmoji.slice(0, 10).map((emoji) =>
+        (<span>
           {emoji.character}
         </span>
         ))}
+      </div>
       
     </div>
   );

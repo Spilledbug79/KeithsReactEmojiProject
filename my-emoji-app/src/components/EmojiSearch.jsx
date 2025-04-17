@@ -48,9 +48,7 @@ function EmojiSearch() {
         type='text'
         placeholder="Type an Emoji name..."
         value={searchEmoji}
-        onChange={handleChange}
- 
-      />
+        onChange={handleChange}/>
       <div className='name' style={{ display: searchEmoji === '' ? 'none' : 'block' }}>
         
         {filteredEmojis.slice(0, 10).map((emoji) =>
