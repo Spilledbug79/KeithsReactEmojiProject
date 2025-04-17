@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function EmojiSearch() {
+function EmojiFinder() {
   const [emojiList, setEmojiList] = useState([]);
   const [searchEmoji, setSearchEmoji] = useState('');
   const [error, setError] = useState(null);
@@ -36,31 +36,32 @@ function EmojiSearch() {
   if (error) return <p>Error: {error}</p>;
 
 
-  const filteredEmojis = emojiList.filter(emoji => emoji.slug.toLowerCase().includes(searchEmoji.toLowerCase()) ||
-    emoji.unicodeName.toLowerCase().includes(searchEmoji.toLowerCase())
+
+
+  const filteredGroupEmoji = emojiList.filter(emoji => emoji.group.toLowerCase().replace(/\s+/g, "-").trim('').includes(searchEmoji.toLowerCase().replace(/\s+/g, "-").trim('')) ||
+    emoji.subGroup.toLowerCase().replace(/\s+/g, "-").trim('').includes(searchEmoji.toLowerCase().replace(/\s+/g, "-").trim(''))
   )
 
 
   return (
     <div>
       <input
-        className='userInput'
+        className='userInput2'
         type='text'
-        placeholder="Type an Emoji name..."
+        placeholder="Type an Emoji Group or Subgroup..."
         value={searchEmoji}
         onChange={handleChange}
- 
-      />
-      <div className='name' style={{ display: searchEmoji === '' ? 'none' : 'block' }}>
-        
-        {filteredEmojis.slice(0, 10).map((emoji) =>
-        (<span>
+        /><button onClick={EmojiFetch}>Group Search</button>
+       
+          
+        {filteredGroupEmoji.slice(0, 10).map((emoji, index) =>
+        (<span key={index} title={emoji.unicode}>
           {emoji.character}
         </span>
         ))}
-      </div>
+      
     </div>
   );
 
 }
-export default EmojiSearch;
+export default EmojiFinder;

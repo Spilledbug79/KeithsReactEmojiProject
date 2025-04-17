@@ -29,9 +29,27 @@ right: 300px;
  flex-direction: column;
 }
 
-
-
  
+.userInput{
+ width: 250px;
+ font-size: 20px;
+}
+
+.userInput2{
+ width: 250px;
+ font-size: 16px;
+ height: 28px;
+}
+ 
+
+.groupAndsupGroup{
+ font-size: 50px;
+
+}
+
+.name{
+ font-size: 50px;
+}
 
  
 
