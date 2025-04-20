@@ -1,60 +1,234 @@
-.emojiInfo{
- list-style-type: none;
-}
-
  
-
-.face{
- height: 5px;
- font-size: 40px;
-}
-
-.container{
-display: flex;
-flex-direction: column;
-text-align: center;
-align-items: center;
-position: absolute;
-top: 5px;
-left: 300px;
-right: 300px;
-}
-
+html, body, #root { 
+  width: 100%; 
+  height: 100%;
+  margin: 0;
+  padding: 0; 
  
-
-.code{
   
- position: relative;
- display: flex;
- flex-direction: column;
 }
 
+.mainTitle{
+  position: fixed;
+  right: 40%;
+}
+.mainContainer{
+ text-align: center
+}
+
+.randomSearch{
+  position: fixed;
+  margin-left: 35%;
+  margin-top: 93px;
+  display: flex;
+}
+
+.randomBtn{
+  position: fixed;
+  font-size: 30px;
+  top: 105px;
+  }
+
+  .randomEmoji{
+    position: fixed;
+    right:42%;
+    top: 9%;
+    font-size: 39px;
+  }
+
+  .icon{
+    position: fixed;
+    top: 95px;
+    font-size:38px;
+  }
+    
+
+.codeContainer{
+display: flex;
+flex-wrap: wrap;
+position: fixed;
+top: 200px;
+left: 30px;
+}
+
+.codeTitle{
+  position: fixed;
+  top: 138px;
+}
+
+.codeContainer{
+  position: fixed;
+  height: 400px;
+  width: 400px;
+    
+}
+
+.emojiInput{
+position: fixed;
+top: 32%;
+font-size: 30px;
+text-align: center;
+height: 50px;
+width: 200px;
+}
+
+.codePointBtn{
+ font-size: 30px;
+ }
+
+.codeBtn{
+  position: relative;
+  bottom: 210px;
+}
+
+.universalCode{
+  position: absolute;
+  top: 120px;
+  font-size: 28px;
+}
+
+.emojiCode{
+  position: absolute;
+  top: 34px;
+  left: 3px;
+}
+
+.groupTitle{
+  position: fixed;
+  display: flex;
+  
  
-.userInput{
- width: 250px;
- font-size: 20px;
-}
-
-.userInput2{
- width: 250px;
- font-size: 16px;
- height: 28px;
-}
- 
-
-.groupAndsupGroup{
- font-size: 50px;
 
 }
+
+.groups{
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  overscroll-behavior: none
+}
+
+.groupInput{
+ position: fixed;
+ left: 30%;
+ height: 50px;
+ top: 32%;
+}
+
+.filter{
+  position: absolute;
+  left: 5px;
+  top: 150px;
+}
+
+.filterBtn{
+ position: fixed;
+padding: 8px 8px 8px 8px;
+font-size: 25px;
+right: 72%;
+bottom: 61%; 
+}
+
+.groupInfo{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 130px;
+  left: 60px;
+  z-index: -1;
+}
+
+.groupList{
+  position: relative;
+  list-style-type: none;
+}
+
+.groupPair{
+  display: flex;
+  font-size: 28px;
+  position: relative;
+  right: 100px;
+
+}
+
 
 .name{
- font-size: 50px;
+  position: absolute;
+ top: 20%;
+ left: 5%; 
 }
 
+.characterTitle{
+  position: fixed;
+  right: 82%;
+  top: 60%;
+}
+
+.userInput1{
+width: 20%;
+position: fixed;
+top: 70%;
+right: 78%;
+}
+
+.characterList{
+  position: fixed;
+  top: 75%;
+  display: flex;
+  left: 20px;
+  font-size: 30px;
+  
+}
+
+.characters{
+  list-style-type: none;
+  
+
+}
+
+
+.showAllBtn{
+  position: fixed;
+  right: 34%;
+  height: 55px;
+  width: 210px;
+  top: 32%;
+}
+
+.showAllEmojis{
+  position: absolute;
+  left: 68%;
+  top: 33%;
+ 
+   
+  
+}
+
+.emojiInfo{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  left: 70%;
+  font-size: 30px;
+  
+ 
+}
+
+.emojiList{
+  position: relative;
+  bottom: 50px;
+  list-style-type: none;
+}
+
+.showAllLoading{
+  top: 33%;
+  position: fixed;
+  right: 34%;
+}
+
+.codePointBtn{
+  position: relative;
+  top: 300px;
+}
  
 
- 
-
- 
-
- 

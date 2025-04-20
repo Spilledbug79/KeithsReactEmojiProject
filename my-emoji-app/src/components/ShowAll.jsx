@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './App.css'
-import EmojiSearch from './components/EmojiSearch'
-import EmojiFinder from './components/EmojiFinder'
+import '../App.css'
 
-function EmojiDisplay() {
+
+function ShowAll() {
   const [emojis, setEmojis] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -33,29 +32,26 @@ function EmojiDisplay() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className='showAllLoading'>Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div className='ShowAllError'>Error: {error.message}</div>;
   }
 
 
   return (
-    <>
-      <div className="container">
-        <EmojiSearch />
-        <EmojiFinder/>
-        <h2>Emoji Data Generator &#128512; </h2>
-        <button onClick={handleClick}>Show All Emojis</button>
 
+    <div className="showAllEmojis">
+      <button className="showAllBtn" onClick={handleClick}>Show All Emojis</button>
+      <div className='main'>
         {isVisible && <ul className='emojiInfo'>
           {emojis.map(emoji => (
-            <li>
-              <p className='code'><strong>CodePoint:</strong>
+            <li className='emojiList'>
+              <p className='code'><strong>CodePoint:  </strong>
+                <em>&#x{emoji.codePoint};</em></p>
 
-                <em>{emoji.codePoint}</em></p>
-
+              character:{emoji.character}, <br />
               group: {emoji.group},<br />
               subgroup: {emoji.subGroup},<br />
               name: {emoji.slug},<br />
@@ -64,9 +60,10 @@ function EmojiDisplay() {
           ))}
         </ul>}
       </div>
+    </div>
 
-    </>
+
   );
 }
 
-export default EmojiDisplay;
+export default ShowAll;
