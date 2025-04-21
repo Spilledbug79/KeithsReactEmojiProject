@@ -25,7 +25,7 @@ function RandomSearch() {
         <div className='randomSearch'>
             <button className="randomBtn" onClick={getRandomEmoji}>Generate Emoji</button>
 
-            {emoji && <p className='randomEmoji'>Emoji: <span className='icon' dangerouslySetInnerHTML={{ __html: emoji }} /></p>}
+            {emoji && <p className='randomEmoji'>Emoji: &nbsp; <span className='icon' dangerouslySetInnerHTML={{ __html: emoji }} /></p>}
         </div>
     );
 }

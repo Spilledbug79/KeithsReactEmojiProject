@@ -3,10 +3,10 @@ html, body, #root {
   width: 100%; 
   height: 100%;
   margin: 0;
-  padding: 0; 
- 
-  
-}
+  padding: 0;
+  overflow: hidden;
+   
+ }
 
 .mainTitle{
   position: fixed;
@@ -27,11 +27,12 @@ html, body, #root {
   position: fixed;
   font-size: 30px;
   top: 105px;
+  right: 56%;
   }
 
   .randomEmoji{
     position: fixed;
-    right:42%;
+    right:47%;
     top: 9%;
     font-size: 39px;
   }
@@ -39,7 +40,7 @@ html, body, #root {
   .icon{
     position: fixed;
     top: 95px;
-    font-size:38px;
+    font-size:40px;
   }
     
 
@@ -49,6 +50,7 @@ flex-wrap: wrap;
 position: fixed;
 top: 200px;
 left: 30px;
+ 
 }
 
 .codeTitle{
@@ -56,12 +58,7 @@ left: 30px;
   top: 138px;
 }
 
-.codeContainer{
-  position: fixed;
-  height: 400px;
-  width: 400px;
-    
-}
+ 
 
 .emojiInput{
 position: fixed;
@@ -72,13 +69,15 @@ height: 50px;
 width: 200px;
 }
 
-.codePointBtn{
- font-size: 30px;
- }
-
 .codeBtn{
   position: relative;
   bottom: 210px;
+}
+
+ .codePointBtn{
+  font-size: 28px;
+  position: relative;
+  top: 300px;
 }
 
 .universalCode{
@@ -89,23 +88,31 @@ width: 200px;
 
 .emojiCode{
   position: absolute;
-  top: 34px;
-  left: 3px;
+  top: 70px;
+  left: 5%;
+}
+
+.code{
+  position: relative;
+  left: 100%;
+  bottom: 85px;
 }
 
 .groupTitle{
   position: fixed;
   display: flex;
-  
- 
-
-}
+  }
 
 .groups{
   position: absolute;
   top: 20%;
   left: 30%;
-  overscroll-behavior: none
+  overflow-y: scroll;
+  height: 75%;
+}
+
+.groups::-webkit-scrollbar {
+  display: none;
 }
 
 .groupInput{
@@ -119,6 +126,7 @@ width: 200px;
   position: absolute;
   left: 5px;
   top: 150px;
+  
 }
 
 .filterBtn{
@@ -161,19 +169,19 @@ bottom: 61%;
 .characterTitle{
   position: fixed;
   right: 82%;
-  top: 60%;
+  top: 64%;
 }
 
 .userInput1{
 width: 20%;
 position: fixed;
-top: 70%;
+top: 73%;
 right: 78%;
 }
 
 .characterList{
   position: fixed;
-  top: 75%;
+  top: 78%;
   display: flex;
   left: 20px;
   font-size: 30px;
@@ -189,46 +197,50 @@ right: 78%;
 
 .showAllBtn{
   position: fixed;
-  right: 34%;
+  right: 10%;
   height: 55px;
   width: 210px;
-  top: 32%;
+  top: 5%;
+  
 }
 
 .showAllEmojis{
   position: absolute;
-  left: 68%;
-  top: 33%;
+  left: 60%;
+  top: 18%;
+  overflow-y:scroll;
+  height: 500%;
+  }
+
  
-   
-  
+.showAllEmoji::-webkit-scrollbar{
+  display: none;
 }
 
+ 
 .emojiInfo{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   left: 70%;
   font-size: 30px;
-  
- 
-}
+ }
 
 .emojiList{
   position: relative;
   bottom: 50px;
-  list-style-type: none;
+  list-style-type: none; 
+ 
 }
 
 .showAllLoading{
-  top: 33%;
   position: fixed;
-  right: 34%;
+  right: 10%;
+  height: 55px;
+  width: 210px;
+  top: 5%;
 }
 
-.codePointBtn{
-  position: relative;
-  top: 300px;
-}
+
  
 

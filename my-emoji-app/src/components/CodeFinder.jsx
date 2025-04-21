@@ -37,7 +37,7 @@ function CodeFinder() {
       <button className='codePointBtn' onClick={handleSearch}>
         Find Code
       </button></div>
-      {emojiCode && <p className='universalCode'>Uiversal CodePoint: <span className='emojiCode'><strong>&#x{emojiCode};</strong></span></p>}
+      {emojiCode && <p className='universalCode'>Uiversal CodePoint: <span className='emojiCode'><strong className='code'>&#x{emojiCode};</strong></span></p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
