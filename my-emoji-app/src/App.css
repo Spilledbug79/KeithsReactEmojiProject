@@ -11,6 +11,10 @@ html, body, #root {
 .mainTitle{
   position: fixed;
   right: 40%;
+  background: cyan;
+  padding: 0 20px;
+  border-radius: 10px;
+  border: 2px solid black;
 }
 .mainContainer{
  text-align: center
@@ -51,11 +55,17 @@ position: fixed;
 top: 200px;
 left: 30px;
  
+ 
 }
 
 .codeTitle{
   position: fixed;
   top: 138px;
+  font-size: 30px;
+  background: cyan;
+  padding: 0 20px;
+  border-radius: 10px;
+  border: 2px solid black;
 }
 
  
@@ -95,12 +105,18 @@ width: 200px;
 .code{
   position: relative;
   left: 100%;
-  bottom: 85px;
+  bottom: 40px;
+  margin-left: 15%;
 }
 
 .groupTitle{
   position: fixed;
   display: flex;
+  background: cyan;
+  font-size: 30px;
+  padding: 0 20px;
+  border-radius: 10px;
+  border: 2px solid black;
   }
 
 .groups{
@@ -117,14 +133,14 @@ width: 200px;
 
 .groupInput{
  position: fixed;
- left: 30%;
+ left: 38%;
  height: 50px;
  top: 32%;
 }
 
 .filter{
   position: absolute;
-  left: 5px;
+  left: 30px;
   top: 150px;
   
 }
@@ -133,7 +149,7 @@ width: 200px;
  position: fixed;
 padding: 8px 8px 8px 8px;
 font-size: 25px;
-right: 72%;
+right: 63%;
 bottom: 61%; 
 }
 
@@ -168,20 +184,26 @@ bottom: 61%;
 
 .characterTitle{
   position: fixed;
-  right: 82%;
+  right: 80%;
   top: 64%;
+  font-size: 30px;
+  background: cyan;
+  padding: 0 8px;
+  background: cyan;
+  border-radius: 8%;
+  border: 2px solid black; 
 }
 
 .userInput1{
 width: 20%;
 position: fixed;
-top: 73%;
+top: 75%;
 right: 78%;
 }
 
 .characterList{
   position: fixed;
-  top: 78%;
+  top: 80%;
   display: flex;
   left: 20px;
   font-size: 30px;
@@ -224,6 +246,7 @@ right: 78%;
   flex-wrap: wrap;
   left: 70%;
   font-size: 30px;
+  margin-left: 45px;
  }
 
 .emojiList{
@@ -239,6 +262,12 @@ right: 78%;
   height: 55px;
   width: 210px;
   top: 5%;
+}
+
+.italicCode{
+  position: absolute;
+  top: 30px;
+  left: 200px;
 }
 
 

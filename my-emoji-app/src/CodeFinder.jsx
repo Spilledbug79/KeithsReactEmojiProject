@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-
-
 function CodeFinder() {
   const [emojiInput, setEmojiInput] = useState('');
   const [emojiCode, setEmojiCode] = useState('');
