@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import '../App.css'
-
+import './App.css'
+ 
 
 function ShowAll() {
   const [emojis, setEmojis] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
-  const handleClick = () => {
+  
+    const fetchEmojis = async () => {
     setIsVisible(!isVisible);
-    setLoading(true)
-  };
-
-
-  const fetchEmojis = async () => {
+    setLoading(true) 
     try {
       const response = await fetch('https://emoji-api.com/emojis?access_key=0037c9794745ff1ccdf7425677fa8925df9c51d6');
       if (!response.ok) {
@@ -39,7 +36,7 @@ function ShowAll() {
   return (
 
     <div className="showAllEmojis">
-      <button className="showAllBtn" onClick={handleClick} disabled={loading}>{loading ? 'Loading...' : 'Show All Emojis'}</button>
+      <button className="showAllBtn"  disabled={loading} onClick={fetchEmojis}>{loading ? 'Loading...' : 'Show All Emojis'}</button>
       <div className='main'>
         {isVisible && <ul className='emojiInfo'>
           {emojis.map(emoji => (

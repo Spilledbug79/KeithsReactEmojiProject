@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Dashboard from './Dashboard.jsx'
+import EmojiApp from './EmojiApp.jsx'
 
 // Define your components
  
@@ -10,7 +10,7 @@ const LoginPage = ({ onLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Hardcoded credentials for demonstration purposes
-    if (username === 'keith' && password === 'eatherly') {
+    if (username === 'keith' && password === 'password') {
       onLogin(true); // Call onLogin function and pass true
     } else {
       alert('Invalid username or password');
@@ -49,7 +49,7 @@ const App = () => {
 
   return (
     <div>
-      {isLoggedIn ? <Dashboard/> : <LoginPage onLogin={setIsLoggedIn} />}
+      {isLoggedIn ? <EmojiApp/> : <LoginPage onLogin={setIsLoggedIn} />}
     </div>
   );
 };
