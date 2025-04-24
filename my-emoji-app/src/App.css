@@ -102,13 +102,6 @@ width: 200px;
   left: 5%;
 }
 
-.code{
-  position: relative;
-  left: 100%;
-  bottom: 40px;
-  margin-left: 15%;
-}
-
 .groupTitle{
   position: fixed;
   display: flex;

@@ -27,7 +27,7 @@ function ShowAll() {
   };
   useEffect(() => {
     fetchEmojis();
-  }, []);
+  }, [1000]);
 
   if (error) {
     return <div className='ShowAllError'>Error: {error.message}</div>;
@@ -41,11 +41,8 @@ function ShowAll() {
         {isVisible && <ul className='emojiInfo'>
           {emojis.map(emoji => (
             <li className='emojiList'>
-              <p className='code'><strong>CodePoint:</strong>
+              <p><strong>CodePoint:</strong>
                 <em>&#x{emoji.codePoint};</em></p>
-
-
-              <p className="italicCode"><em>&#x{emoji.codePoint};</em></p>
               character:{emoji.character},
               group: {emoji.group},
               subgroup: {emoji.subGroup},

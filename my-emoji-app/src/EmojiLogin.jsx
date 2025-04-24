@@ -44,7 +44,7 @@ const LoginPage = ({ onLogin }) => {
 };
 
 // Main app component
-const App = () => {
+const EmojiLogin = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
@@ -54,4 +54,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default EmojiLogin;
