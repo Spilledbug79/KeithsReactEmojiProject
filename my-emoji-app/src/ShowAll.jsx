@@ -63,7 +63,7 @@ if (!emojis || emojis.length === 0) {
     alignItems: "center",
     backgroundColor: "lightgray",
     alignContent: 'center',
-    fontSize: '22px',
+    fontSize: '25px',
     padding: '5px',
     borderRadius: '15%',
     marginBottom: '10px',
@@ -101,7 +101,8 @@ if (!emojis || emojis.length === 0) {
           >
   
             {currentEmoji.codePoint},<br />
-            {currentEmoji.character} <br />
+            <motion.div whileHover={{ scale: 5}}>
+              {currentEmoji.character}</motion.div> <br />
             {currentEmoji.slug}<br />
             {currentEmoji.group}<br />
             {currentEmoji.subGroup}
