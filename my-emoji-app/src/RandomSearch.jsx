@@ -27,8 +27,8 @@ function RandomSearch() {
             <p className='randomText'><strong>Click on 'Generate Emoji'  to copy and paste a Random Emoji on any  document you want.</strong></p>
             <button className="randomBtn" onClick={getRandomEmoji}>Generate Emoji</button>
 
-           <div className='randomSpace'> {emoji && <p className='randomEmoji'>Emoji: &nbsp; <span className='icon' dangerouslySetInnerHTML={{ __html: emoji }} /></p>}
-           </div>
+            <div className='randomSpace'> {emoji && <p className='randomEmoji'>Emoji: &nbsp; <span className='icon' dangerouslySetInnerHTML={{ __html: emoji }} /></p>}
+            </div>
         </div>
     );
 }

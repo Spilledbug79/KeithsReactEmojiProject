@@ -23,7 +23,7 @@ const LoginPage = ({ onLogin }) => {
 
 
 
-    if (username === 'Keith' && password === 'eatherly'){
+    if (username === 'Keith' && password === 'eatherly') {
       onLogin(true); // Call onLogin function and pass true
     } else {
       alert('Invalid username or password');
@@ -31,7 +31,7 @@ const LoginPage = ({ onLogin }) => {
   };
 
   return (
-    
+
     <form onSubmit={handleSubmit}>
       <div className='login'>
         <div className='border'>

@@ -5,6 +5,6 @@ import EmojiLogin from './EmojiLogin'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <EmojiLogin/>
+    <EmojiLogin />
   </StrictMode>,
 )

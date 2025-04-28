@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+
 function EmojiSearch() {
   const [emojiList, setEmojiList] = useState([]);
   const [searchEmoji, setSearchEmoji] = useState('');
@@ -39,6 +40,7 @@ function EmojiSearch() {
 
 
   return (
+
     <div className="emojiSearch">
       <h3 className='searchTitle'>Single Emoji Search:</h3>
       <p className='searchText'><strong>Type in an 'Emoji Name' below and immediately get the top 24 closest Emoji that matches your text.</strong></p>
@@ -47,12 +49,12 @@ function EmojiSearch() {
         placeholder="Type in Emoji Name"
         value={searchEmoji}
         onChange={handleChange} />
-      <div className='characterList' style={{ display: searchEmoji === '' ? 'none' : 'flex', flexWrap:'wrap' }}>
+      <div className='characterList' style={{ display: searchEmoji === '' ? 'none' : 'flex', flexWrap: 'wrap' }}>
 
-        {filteredEmojis.slice(0,1000).map((emoji) =>
+        {filteredEmojis.slice(0, 1000).map((emoji) =>
         (<span className='characters'>
-           {emoji.character}
-         </span>
+          {emoji.character}
+        </span>
         ))}
       </div>
     </div>

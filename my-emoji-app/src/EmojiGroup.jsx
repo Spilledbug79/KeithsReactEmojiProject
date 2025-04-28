@@ -6,7 +6,7 @@ function EmojiGroup() {
   const [error, setError] = useState(null);
   const [showFilter, setShowFilter] = useState(false);
   const [emojiFilter, setEmojiFilter] = useState([])
-   
+
 
   const handleInputChange = (event) => {
     setSearchEmoji(event.target.value);
@@ -46,10 +46,10 @@ function EmojiGroup() {
     const newFilteredGroupEmoji = emojiList.filter(emoji => emoji.group.toLowerCase().replace(/\s+/g, "-").trim('').includes(searchEmoji.toLowerCase().replace(/\s+/g, "-").trim('')) || emoji.subGroup.toLowerCase().replace(/\s+/g, "-").trim('').includes(searchEmoji.toLowerCase().replace(/\s+/g, "-").trim('')))
 
     setEmojiFilter(newFilteredGroupEmoji);
-    setShowFilter(!showFilter);  
+    setShowFilter(!showFilter);
   }
 
- 
+
   return (
     <div className="groups">
       <h3 className="groupTitle">Emoji Group Search:</h3>
@@ -63,23 +63,23 @@ function EmojiGroup() {
         value={searchEmoji}
         onChange={handleInputChange}
       />
-  
+
       <button className="filterBtn" onClick={handleFilterClick}>
         Filter Button
       </button>
-  
+
       {showFilter && (
         <div
           className="groupInfo"
           style={{
             display: searchEmoji === "" ? "none" : "flex",
             flexDirection: "column",
-            height: "230px",  
+            height: "230px",
             overflowY: "auto",
-            textAlign: 'center',  
+            textAlign: 'center',
           }}
         >
-          {emojiFilter.slice(0, ).map((emoji, index) => (
+          {emojiFilter.slice(0,).map((emoji, index) => (
             <ul className="groupList" key={index} title={emoji.unicodeName}>
               <div>
                 <li className='groupedList'>
@@ -94,6 +94,6 @@ function EmojiGroup() {
       )}
     </div>
   );
-  
+
 }
 export default EmojiGroup;

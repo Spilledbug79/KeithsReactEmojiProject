@@ -2,7 +2,7 @@
 
 1. Login with the correct user name, email, and password. The Login page checks for the correct validation.
  
- 2. Choose an Emoji by Either clicking on the 'Generate Emoji' Search Button, Typing a Character Name in the 'Single Search Box' if you know them, type in an Emoji Group or SubGroup in the 'Emoji Group Search' if you know them, or if you don't know them then you can look through the entire Emoji list by clicking the 'Show All Emojis' Button and it would Fetch an Emoji or a list of Emojis from an Emoji API source. If no emoji is found, an error message will appear.
+ 2. Choose an Emoji by Either clicking on the 'Generate Emoji' Search Button, Typing a Character Name in the 'Single Search Box' if you know them, type in an Emoji Group or SubGroup in the 'Emoji Group Search' if you know them, or if you don't know them then you can look through the entire Emoji list by clicking the 'All Emojis Flipper' Button and it would Fetch an Emoji Emojis from an Emoji API source. If no emoji is found, an error message will appear.
 
  3. Once you see an Emoji you like: Highlight, Copy, and Paste any Emoji you want to use on any code editor or application that accepts Emoji Icons. 
 
@@ -21,22 +21,26 @@ Third-Party API Integration: Uses an async/await function to fetch data from an 
 
 (5) EmojiApp Components: 
 
-1. for Searching an Emoji by Name or CodePoint and it will display the closest emoji by your input , 
+1. for Logging into the Emojis App by typing in the correct username, email, and password. 
+1. for Searching an Emoji by Name and it will display the closest emoji by your input , 
 2. for Searching an Emoji for Group or Category and clicking on the 'Filter' button,
-3. for being able to look through all emojis by clicking on the 'Show All Emojis' button, and 
+3. for being able to look through all emojis by clicking on the 'Emoji Card Flipper' button, and 
 4. for being able to search through random emojis by clicking on the 'Generate Emoji' button.  
- 
+5. for the main Emoji App to be rendered. 
 
 📂 File Structure (optional)
 src/
+    main.jsx
+    EmojiLogin.jsx
     ShowAll.jsx 
     EmojiGroup.jsx
     EmojiSearch.jsx
     RandomSearch.jsx
+    EmojiApp.jsx
+    main.jsx
     pages/
    └── none;
-EmojiApp.jsx
-main.jsx
+
 
 🔁 Future Plans
 * Implement the ability to be able to automatically copy an emoji by clicking on it.
