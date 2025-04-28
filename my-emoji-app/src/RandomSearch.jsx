@@ -23,9 +23,12 @@ function RandomSearch() {
 
     return (
         <div className='randomSearch'>
+            <h3 className='randomTitle'>Random Emoji Generator:</h3>
+            <p className='randomText'><strong>Click on 'Generate Emoji'  to copy and paste a Random Emoji on any  document you want.</strong></p>
             <button className="randomBtn" onClick={getRandomEmoji}>Generate Emoji</button>
 
-            {emoji && <p className='randomEmoji'>Emoji: &nbsp; <span className='icon' dangerouslySetInnerHTML={{ __html: emoji }} /></p>}
+           <div className='randomSpace'> {emoji && <p className='randomEmoji'>Emoji: &nbsp; <span className='icon' dangerouslySetInnerHTML={{ __html: emoji }} /></p>}
+           </div>
         </div>
     );
 }

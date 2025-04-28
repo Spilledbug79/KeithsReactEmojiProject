@@ -50,29 +50,50 @@ function EmojiGroup() {
   }
 
  
-    return (
-    <div className='groups'>
-      <h3 className='groupTitle'>Emoji Group Search:</h3>
-      <input className='groupInput'
+  return (
+    <div className="groups">
+      <h3 className="groupTitle">Emoji Group Search:</h3>
+      <p className="groupText">
+        <strong>type in Group or SubGroup to find Emojis that you want.</strong>
+      </p>
+      <input
+        className="groupInput"
         type="text"
-        placeholder="Input Group or SubGroup"
+        placeholder="Type in a Category"
         value={searchEmoji}
-        onChange={handleInputChange} />
-        <div className='filter'>
-      <button className='filterBtn' onClick={handleFilterClick}>Filter</button>
-      </div>
+        onChange={handleInputChange}
+      />
+  
+      <button className="filterBtn" onClick={handleFilterClick}>
+        Filter Button
+      </button>
+  
       {showFilter && (
-        <div className='groupInfo' style={{ display: searchEmoji === '' ? 'none' : 'block' }}>
-          {emojiFilter.slice(0, 10).map((emoji, index) =>
-          (<ul className='groupList' key={index} title={emoji.unicodeName}>
-           <div className='groupPair'> <li>{emoji.character},</li>
-            <li>{emoji.slug}</li> </div>
+        <div
+          className="groupInfo"
+          style={{
+            display: searchEmoji === "" ? "none" : "flex",
+            flexDirection: "column",
+            height: "230px",  
+            overflowY: "auto",
+            textAlign: 'center',  
+          }}
+        >
+          {emojiFilter.slice(0, ).map((emoji, index) => (
+            <ul className="groupList" key={index} title={emoji.unicodeName}>
+              <div>
+                <li className='groupedList'>
+                  <p className='firstGroup'>{emoji.character}</p>
+                  <p className='secondGroup'>group: {emoji.group}, </p>
+                  <p className='thirdGroup'>subgroup: {emoji.subGroup} </p>
+                </li>
+              </div>
             </ul>
-
           ))}
         </div>
       )}
     </div>
   );
+  
 }
 export default EmojiGroup;

@@ -39,16 +39,17 @@ function EmojiSearch() {
 
 
   return (
-    <div className="name">
-      <h3 className='characterTitle'>Single Emoji Search:</h3>
+    <div className="emojiSearch">
+      <h3 className='searchTitle'>Single Emoji Search:</h3>
+      <p className='searchText'><strong>Type in an 'Emoji Name' below and immediately get the top 24 closest Emoji that matches your text.</strong></p>
       <input className='userInput1'
         type='text'
-        placeholder="Type in Name or CodePoint"
+        placeholder="Type in Emoji Name"
         value={searchEmoji}
         onChange={handleChange} />
-      <div className='characterList' style={{ display: searchEmoji === '' ? 'none' : 'block' }}>
+      <div className='characterList' style={{ display: searchEmoji === '' ? 'none' : 'flex', flexWrap:'wrap' }}>
 
-        {filteredEmojis.slice(0,10).map((emoji) =>
+        {filteredEmojis.slice(0,1000).map((emoji) =>
         (<span className='characters'>
            {emoji.character}
          </span>
