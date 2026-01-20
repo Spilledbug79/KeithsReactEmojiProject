@@ -43,7 +43,8 @@ justify-content: space-evenly;
 .icon{
   display: flex;
   font-size: 42px;
-  padding-left: 30px;
+  padding-left: 10px;
+  margin-top: -10px;
 
 }
 
@@ -155,7 +156,7 @@ justify-content: space-evenly;
     border-radius: 0.5em;
     border: 1px solid gray;
      
-    margin-top: 20px;
+    margin-top: 19px;
     }
 
     .characterList{
@@ -241,11 +242,7 @@ justify-content: space-evenly;
 
    
 
-    .firstGroup{
-      display: flex;
-      flex-direction: column;
-      margin-left: 30px;
-    }
+ 
     
      .groupList.info{
       display: flex;
@@ -265,16 +262,17 @@ justify-content: space-evenly;
       display: flex;
       font-size: 30px;
       margin-bottom: 10px;
-      margin-top: -10px;
-      
+      margin-top: -15px;
+      flex-direction: column;
+      margin-left: 15px;
       text-align: center;
-      font-size: 30px;
+      font-size: 50px;
     }
 
     .secondGroup{
       display: flex;
       margin-top: 3px;
-      margin-bottom: 3px;
+      margin-bottom: -17px;
       background-color: white;
       padding: 10px 32px;
       border-radius: 12px;  
@@ -310,6 +308,8 @@ justify-content: space-evenly;
       display: flex;
       flex-direction: column;
       width: 190px;
+      text-align: center;
+      justify-content: center;
       
     }
 
@@ -535,7 +535,7 @@ justify-content: space-evenly;
      border: 3px dashed  black;
      box-shadow: 10px 10px gray;
      background: linear-gradient(135deg, white, #ffffff);
-     margin-top: 25px;
+     margin-top: 20px;
      padding: 5px;
      text-align: center;
      margin-left: -10px;
@@ -555,7 +555,7 @@ justify-content: space-evenly;
   border-radius: 0.5em;
   border: 1px solid gray;
   margin-bottom: 50px;
-  margin-top: -150px;
+  margin-top: -152px;
 }
 
  .yourEmail{
@@ -574,12 +574,13 @@ justify-content: space-evenly;
 
 .motion{
   display: flex
+  
 }
 
 .copyRight{
   display: flex;
   font-size: 16px;
-  z-index: -1;
+ 
   margin-bottom: 0px;
 }
 
@@ -641,17 +642,22 @@ justify-content: space-evenly;
   width: 170px;
   padding-left: 10px;
   height: 220px;
+  margin-top: -3px;
 }
  .showAll{
   display: flex;
   margin-left: 20px;
  }
 
+ 
+
  .emojiSearch{
   display: flex;
   margin-left: 0px;
+  margin-top: 75px;
+
  }
- 
+
 }
 
  

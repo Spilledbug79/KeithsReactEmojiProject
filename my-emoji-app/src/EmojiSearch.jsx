@@ -58,6 +58,7 @@ function EmojiSearch() {
         ))}
       </div>
     </div>
+
   );
 
 }

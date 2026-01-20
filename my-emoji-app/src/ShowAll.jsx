@@ -55,8 +55,8 @@ function ShowAll() {
         <motion.div className='motion'
 
           style={{
-            width: "162px",
-            height: "260px",
+            width: "160px",
+            height: "310px",
             display: "flex",
             flexDirection: 'column',
             justifyContent: "center",
@@ -69,11 +69,11 @@ function ShowAll() {
             marginBottom: '10px',
             marginTop: '1px',
             fontWeight: '300px',
-            letterSpacing: '0.05em',
+            letterSpacing: '0.03em',
             background: 'linear-gradient(135deg,rgb(248, 246, 246), #ffffff)',
             padding: ' 0.5em',
             boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-            border: '3px dashed   black',
+            border: '3px dashed black',
             boxShadow: '10px 10px gray',
             marginLeft: '5px'
 
@@ -104,8 +104,8 @@ function ShowAll() {
         >
 
           {currentEmoji.codePoint},<br />
-          <motion.div whileHover={{ scale: 5 }}>
-            {currentEmoji.character}</motion.div> <br />
+          <motion.div style={{fontSize: '45px'}} whileHover={{ scale: 4}}>
+          {currentEmoji.character}</motion.div> <br />
           {currentEmoji.slug}<br />
           {currentEmoji.group}<br />
           {currentEmoji.subGroup}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion'
 
 function EmojiGroup() {
   const [emojiList, setEmojiList] = useState([]);
@@ -77,14 +78,18 @@ function EmojiGroup() {
             height: "230px",
             overflowY: "auto",
             textAlign: 'center',
+            justifyContent: 'center',
+            alignContent: 'center',
+             
+             
           }}
         >
           {emojiFilter.slice(0,).map((emoji, index) => (
             <ul className="groupList" key={index} title={emoji.unicodeName}>
               <div>
                 <li className='groupedList'>
-                  <p className='firstGroup'>{emoji.character}</p>
-                  <p className='secondGroup'>group: {emoji.group}, </p>
+                  <motion.div style={{marginTop: '-30px', marginBottom: '-10px'}} whileHover={{  scale: 2.3 }}><p className='firstGroup'>{emoji.character}</p></motion.div>
+                  <p className='secondGroup'>group: {emoji.group},</p>
                   <p className='thirdGroup'>subgroup: {emoji.subGroup} </p>
                 </li>
               </div>

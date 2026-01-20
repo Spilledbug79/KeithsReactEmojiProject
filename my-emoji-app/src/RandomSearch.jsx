@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'
+import { motion } from 'framer-motion';
 
 function RandomSearch() {
     const [emoji, setEmoji] = useState('');
@@ -27,9 +28,10 @@ function RandomSearch() {
             <p className='randomText'><strong>Click on 'Generate Emoji'  to copy and paste a Random Emoji on any  document you want.</strong></p>
             <button className="randomBtn" onClick={getRandomEmoji}>Generate Emoji</button>
 
-            <div className='randomSpace'> {emoji && <p className='randomEmoji'>Emoji: &nbsp; <span className='icon' dangerouslySetInnerHTML={{ __html: emoji }} /></p>}
+            <div className='randomSpace'> {emoji && <p className='randomEmoji'>Emoji:<motion.div whileHover={{ scale: 2.1 }}><span className='icon' dangerouslySetInnerHTML={{ __html: emoji }} /></motion.div></p>}
             </div>
         </div>
+         
     );
 }
 
