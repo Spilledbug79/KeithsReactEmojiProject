@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/KeithsEmojiReactApp/static/css/main.397f32d9.css",
+    "main.js": "/KeithsEmojiReactApp/static/js/main.985f16aa.js",
+    "index.html": "/KeithsEmojiReactApp/index.html",
+    "main.397f32d9.css.map": "/KeithsEmojiReactApp/static/css/main.397f32d9.css.map",
+    "main.985f16aa.js.map": "/KeithsEmojiReactApp/static/js/main.985f16aa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.397f32d9.css",
+    "static/js/main.985f16aa.js"
+  ]
+}
